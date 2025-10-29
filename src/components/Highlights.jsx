@@ -29,8 +29,8 @@ export default function Highlights() {
   return (
     <section id="features" className="mt-14 md:mt-20">
       <div className="text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-white">Why FlamesBlue Canteen</h2>
-        <p className="mt-2 text-slate-300 text-sm md:text-base">A refined design system with performance, clarity, and motion built-in.</p>
+        <h2 className="text-2xl md:text-3xl font-bold text-white">Why MIT ADT Canteen</h2>
+        <p className="mt-2 text-slate-300 text-sm md:text-base">A warm visual system with performance, clarity, and motion built-in.</p>
       </div>
 
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -45,8 +45,8 @@ export default function Highlights() {
               transition={{ duration: 0.45, delay: i * 0.05 }}
               className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-white/10 to-white/5 p-5 ring-1 ring-white/10 backdrop-blur-md"
             >
-              <div className="absolute -left-10 -top-10 h-36 w-36 rounded-full bg-cyan-500/10 blur-2xl" />
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-300 ring-1 ring-cyan-400/20">
+              <div className="absolute -left-10 -top-10 h-36 w-36 rounded-full bg-orange-500/10 blur-2xl" />
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-orange-500/15 text-amber-300 ring-1 ring-orange-400/20">
                 <Icon size={20} />
               </span>
               <h3 className="mt-3 font-semibold text-white">{f.title}</h3>

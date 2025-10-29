@@ -53,7 +53,7 @@ export default function MenuPreview() {
         </div>
         <a
           href="#"
-          className="text-sm font-semibold text-cyan-300 hover:text-cyan-200"
+          className="text-sm font-semibold text-amber-300 hover:text-amber-200"
         >
           View Full Menu →
         </a>
@@ -71,9 +71,9 @@ export default function MenuPreview() {
               transition={{ duration: 0.5, delay: idx * 0.05 }}
               className="group relative overflow-hidden rounded-2xl bg-white/5 p-5 ring-1 ring-white/10 backdrop-blur-md"
             >
-              <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-cyan-500/10 blur-2xl" />
+              <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-orange-500/10 blur-2xl" />
               <div className="flex items-center gap-3">
-                <span className="grid h-10 w-10 place-items-center rounded-xl bg-cyan-500/15 text-cyan-300 ring-1 ring-cyan-400/20">
+                <span className="grid h-10 w-10 place-items-center rounded-xl bg-orange-500/15 text-amber-300 ring-1 ring-orange-400/20">
                   <Icon size={20} />
                 </span>
                 <h3 className="text-white font-semibold">{cat.category}</h3>
@@ -85,7 +85,7 @@ export default function MenuPreview() {
                     className="flex items-center justify-between rounded-lg bg-white/5 px-3 py-2 text-sm text-slate-200 ring-1 ring-white/10 transition group-hover:bg-white/10"
                   >
                     <span className="truncate">{item.name}</span>
-                    <span className="font-semibold text-cyan-300">₹{item.price}</span>
+                    <span className="font-semibold text-amber-300">₹{item.price}</span>
                   </li>
                 ))}
               </ul>
