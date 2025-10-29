@@ -42,12 +42,13 @@ const slides = [
       chip: 'bg-emerald-500/15 text-emerald-100 ring-emerald-400/20',
       text: 'text-white',
     },
-    animation: 'mist',
+    // Match Coca-Cola's motion: use the same droplets/condensation effect and keep background zoom via parallax
+    animation: 'droplets',
     background: {
       type: 'image',
       imageUrl:
-        'https://images.unsplash.com/photo-1563906267088-b029e7101113?q=80&w=2000&auto=format&fit=crop', // bottle on ice with citrus feel
-      tintClass: 'from-emerald-700/40 via-emerald-900/40 to-stone-950/70',
+        'https://upload.wikimedia.org/wikipedia/commons/2/2f/Sprite_12oz_can.png', // actual Sprite product image
+      tintClass: 'from-emerald-700/30 via-emerald-900/35 to-stone-950/70',
       parallax: true,
     },
   },
