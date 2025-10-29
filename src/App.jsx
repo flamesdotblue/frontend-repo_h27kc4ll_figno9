@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Hero from './components/Hero';
+import HeroCarousel from './components/HeroCarousel';
 import MenuPreview from './components/MenuPreview';
 import Highlights from './components/Highlights';
 import SiteFooter from './components/SiteFooter';
@@ -23,7 +23,7 @@ export default function App() {
       </header>
 
       <main className="mx-auto max-w-6xl px-6 md:px-12">
-        <Hero />
+        <HeroCarousel />
         <MenuPreview />
         <Highlights />
 
