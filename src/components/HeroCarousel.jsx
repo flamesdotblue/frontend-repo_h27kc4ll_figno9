@@ -12,15 +12,21 @@ const slides = [
     brand: 'Coca-Cola',
     eyebrow: 'MIT ADT Canteen',
     title: 'Taste the Feeling',
-    tagline: 'Classic fizz with cool condensation.',
+    tagline: 'Smart, Fast, and Flavorful Canteen Experience.',
     ctaPrimary: { label: 'Browse Menu', href: '#menu' },
     ctaSecondary: { label: 'See Highlights', href: '#features' },
     theme: {
       accent: 'bg-orange-500',
       accentHover: 'hover:bg-orange-400',
       chip: 'bg-orange-500/15 text-amber-200 ring-orange-400/20',
+      text: 'text-white',
     },
     animation: 'droplets',
+    background: {
+      type: 'color',
+      // Spline serves as the primary background for Coca-Cola; keep a subtle red glow layer for brand feel
+      tintClass: 'from-red-600/20 via-red-700/10 to-transparent',
+    },
   },
   {
     id: 'sprite',
@@ -34,8 +40,16 @@ const slides = [
       accent: 'bg-emerald-500',
       accentHover: 'hover:bg-emerald-400',
       chip: 'bg-emerald-500/15 text-emerald-100 ring-emerald-400/20',
+      text: 'text-white',
     },
     animation: 'mist',
+    background: {
+      type: 'image',
+      imageUrl:
+        'https://images.unsplash.com/photo-1563906267088-b029e7101113?q=80&w=2000&auto=format&fit=crop', // bottle on ice with citrus feel
+      tintClass: 'from-emerald-700/40 via-emerald-900/40 to-stone-950/70',
+      parallax: true,
+    },
   },
   {
     id: 'lays',
@@ -49,8 +63,16 @@ const slides = [
       accent: 'bg-amber-500',
       accentHover: 'hover:bg-amber-400',
       chip: 'bg-amber-500/15 text-amber-100 ring-amber-400/20',
+      text: 'text-white',
     },
     animation: 'chips',
+    background: {
+      type: 'image',
+      imageUrl:
+        'https://images.unsplash.com/photo-1599490659213-e2b9527bd087?q=80&w=2000&auto=format&fit=crop', // bright yellow chips
+      tintClass: 'from-amber-300/30 via-amber-400/25 to-stone-950/70',
+      parallax: true,
+    },
   },
 ];
 
@@ -74,7 +96,12 @@ export default function HeroCarousel() {
   const activeSlide = useMemo(() => slides[index], [index]);
 
   return (
-    <section className="relative h-[70vh] md:h-[80vh] w-full overflow-hidden rounded-2xl bg-slate-900/80 select-none" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+    <section
+      className="relative h-[70vh] md:h-[80vh] w-full overflow-hidden rounded-2xl bg-slate-900/80 select-none"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      {/* Global 3D cover background */}
       <div className="absolute inset-0">
         <Spline
           scene="https://prod.spline.design/MscgRj2doJR2RRa2/scene.splinecode"
@@ -82,6 +109,7 @@ export default function HeroCarousel() {
         />
       </div>
 
+      {/* Gradient overlay to improve legibility; does not block interactions */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-stone-900/40 via-stone-950/65 to-stone-950/80" />
 
       <div className="relative z-10 h-full w-full">
@@ -98,6 +126,7 @@ export default function HeroCarousel() {
           </motion.div>
         </AnimatePresence>
 
+        {/* Controls */}
         <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-2 md:px-3">
           <button
             aria-label="Previous"
@@ -115,6 +144,7 @@ export default function HeroCarousel() {
           </button>
         </div>
 
+        {/* Dots */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
           {slides.map((s, i) => (
             <button
